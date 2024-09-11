@@ -1,11 +1,11 @@
 const cacheName = "offline-cache-v1";
-const cacheUrls = ["index.html"];
+const assets = ["index.html"];
 
 // Installing the Service Worker
 self.addEventListener("install", async (event) => {
   try {
     const cache = await caches.open(cacheName);
-    await cache.addAll(cacheUrls);
+    await cache.addAll(assets);
   } catch (error) {
     console.error("Service Worker installation failed:", error);
   }
